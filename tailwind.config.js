@@ -27,6 +27,15 @@ module.exports = {
       fontFamily: {
         sans: ["Titillium Web", ...defaultTheme.fontFamily.sans],
       },
+      height: {
+        "h-1-px": "1px",
+        "screen/2": "50vh",
+        "screen/3": "calc(100vh / 3)",
+        "screen/4": "calc(100vh / 4)",
+        "screen/5": "calc(100vh / 5)",
+        "screen-3/4": "calc(100vh - 100vh / 3)",
+        "screen-4/5": "calc(100vh - 100vh / 5)",
+      },
     },
   },
   variants: {
