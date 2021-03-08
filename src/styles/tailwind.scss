@@ -3,11 +3,11 @@
 
 @layer base {
   h1 {
-    @apply text-5xl font-semibold lg:text-8xl;
+    @apply text-5xl font-semibold md:text-6xl lg:text-7xl;
   }
 
   h2 {
-    @apply text-4xl font-medium lg:text-5xl;
+    @apply text-4xl font-medium md:text-4xl lg:text-5xl;
   }
 
   h3 {
@@ -25,11 +25,22 @@
   p {
     @apply my-4 text-base md:text-lg lg:text-2xl;
   }
+
+  .my-gradient {
+    @apply bg-gradient-to-r from-yellow-400 to-yellow-500;
+  }
 }
 
 @tailwind components;
 /* purgecss end ignore */
 @tailwind utilities;
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
 
 /* purgecss start ignore */
 html {
