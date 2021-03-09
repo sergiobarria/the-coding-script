@@ -1,26 +1,69 @@
-import { useRouter } from "next/router"
+import React from "react"
 import Link from "next/link"
+import { useRouter } from "next/router"
 
-type Props = {
-  href: string
-  linkName: string
-  activeClassName?: string
-} & typeof defaultProps
+// interface Props {
+//   href: string
+//   children: Element
+// }
 
-const defaultProps = {
-  activeClassName: "text-green font-600",
-}
-
-export const NavLink = ({ href, linkName, activeClassName }: Props) => {
+export default function ActiveLink({ href, children }) {
   const router = useRouter()
 
-  return (
-    <Link href={href}>
-      <a className={router.pathname === href ? activeClassName : null}>
-        {linkName}
-      </a>
-    </Link>
-  )
+  let className = children.props.className || ""
+  if (router.pathname === href) {
+    className = `${className} my-gradient`
+  }
+
+  return <Link href={href}>{React.cloneElement(children, { className })}</Link>
 }
 
-NavLink.defaultProps = defaultProps
+// import {useRouter} from 'next/router'
+// import Link from 'next/link'
+// import React, {Children} from 'react'
+
+// const ActiveLink = ({children, activeClassName, ...props}) => {
+//   const {asPath} = useRouter()
+//   const child = Children.only(children)
+//   const childClassName = child.props.className || ''
+
+//   const className =
+//     asPath === props.href || asPath === props.as ? `${childClassName} ${activeClassName}`.trim()
+//     : childClassName
+
+//   return (
+//     <Link {...props}>
+//       {React.cloneElement(child, {
+//         className: className || null,
+//       })}
+//     </Link>
+//   )
+// }
+
+// export default ActiveLink
+// import { useRouter } from "next/router"
+// import Link from "next/link"
+
+// type Props = {
+//   href: string
+//   linkName: string
+//   activeClassName?: string
+// } & typeof defaultProps
+
+// const defaultProps = {
+//   activeClassName: "text-green font-600",
+// }
+
+// export const NavLink = ({ href, linkName, activeClassName }: Props) => {
+//   const router = useRouter()
+
+//   return (
+//     <Link href={href}>
+//       <a className={router.pathname === href ? activeClassName : null}>
+//         {linkName}
+//       </a>
+//     </Link>
+//   )
+// }
+
+// NavLink.defaultProps = defaultProps
