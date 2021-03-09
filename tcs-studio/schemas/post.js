@@ -43,6 +43,11 @@ export default {
       type: "datetime",
     },
     {
+      name: "excerpt",
+      title: "Excerpt",
+      type: "string",
+    },
+    {
       name: "body",
       title: "Body",
       type: "blockContent",
