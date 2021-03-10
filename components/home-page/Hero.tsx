@@ -39,7 +39,7 @@ export default function Hero(): JSX.Element {
         <span className="mr-10">
           <Button text="Contact Me" url="/contact" />
         </span>
-        <Button text="Check Blog" url="/blog" transparent />
+        <Button text="Check Blog &rarr;" url="/blog" transparent />
       </div>
 
       <div className="absolute left-0 flex justify-center w-full bottom-4">

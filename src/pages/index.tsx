@@ -14,7 +14,7 @@ export default function Home({ posts }) {
     <>
       <Hero />
       <Services />
-      <PostsPreview posts={posts} />
+      <PostsPreview posts={posts} showBtn showTitle />
     </>
   )
 }

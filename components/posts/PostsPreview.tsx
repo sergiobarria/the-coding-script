@@ -16,7 +16,7 @@ export default function PostsPreview({ posts, showTitle, showBtn }: Posts) {
   // console.log(posts)
 
   return (
-    <section className="py-6 md:my-10">
+    <div className="py-6 md:my-10">
       {showTitle && <Title title="Latest Posts" />}
       <div className="grid w-11/12 max-w-screen-xl gap-8 mx-auto my-6 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
         {latestPost && <Post {...latestPost} latestPost />}
@@ -29,6 +29,6 @@ export default function PostsPreview({ posts, showTitle, showBtn }: Posts) {
           <Button url="/blog" text="SEE MORE &rarr;" />
         </div>
       )}
-    </section>
+    </div>
   )
 }

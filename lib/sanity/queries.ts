@@ -50,3 +50,7 @@ export const postBySlugQuery = `
     ${postFields}
 }
 `
+
+export const getAllProjects = `
+  *[_type == "projects"] | order(date desc, _createdAt desc)
+`
