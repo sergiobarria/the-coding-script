@@ -2,7 +2,20 @@ import React from "react"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Post(props) {
+interface Props {
+  title?: string
+  slug?: { current: string }
+  author?: object
+  mainImage?: { asset: { url: string } }
+  categories?: { description: string; title: string }
+  publishedAt?: string
+  excerpt?: string
+  body?: {}[]
+  readTime?: number
+  latestPost?: boolean
+}
+
+export default function Post(props: Props) {
   const {
     title,
     slug,
@@ -14,8 +27,8 @@ export default function Post(props) {
     body,
     readTime,
   } = props
-  // console.log(categories)
-  // console.log(author)
+  const { latestPost } = props
+  // console.log(props)
 
   const formatedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
@@ -24,9 +37,9 @@ export default function Post(props) {
   })
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={`/blog/${slug.current}`}>
       <a>
-        <article className="relative h-full p-4 mx-auto shadow-md">
+        <article className="relative h-full p-4 mx-auto overflow-hidden transition-all duration-300 transform shadow-md hover:scale-110 hover:shadow-xl">
           <div className="relative h-48">
             {mainImage && (
               <Image
@@ -37,11 +50,16 @@ export default function Post(props) {
               />
             )}
           </div>
+          {latestPost && (
+            <span className="absolute px-16 overflow-hidden font-semibold transform -rotate-45 -left-8 top-8 my-gradient">
+              Latest
+            </span>
+          )}
           <div className="h-16">
             <h4 className="py-2 text-lg font-semibold leading-none">{title}</h4>
           </div>
           <hr />
-          <h5 className="pl-2 mt-2 text-sm border-l-2 border-yellow-500">
+          <h5 className="absolute px-2 mt-2 text-sm font-bold text-white bg-gray-400 rounded-full top-4 right-6">
             {categories.title}
           </h5>
           <p className="pb-4 text-base">{excerpt}</p>

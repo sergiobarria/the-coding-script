@@ -11,9 +11,9 @@ const styles: {
   btnTransparent: string
 } = {
   btn:
-    "uppercase px-4 py-2 mr-10 tracking-widest font-semibold text-white my-gradient rounded-lg md:text-xl cursor-pointer animate-pulse",
+    "uppercase px-4 py-2 tracking-widest font-semibold text-white my-gradient rounded-lg md:text-xl cursor-pointer animate-pulse",
   btnTransparent:
-    "uppercase px-4 py-2 mr-10 tracking-widest font-semibold text-gradient my-gradient border border-yellow-400 rounded-lg md:text-xl cursor-pointer animate-pulse",
+    "uppercase px-4 py-2 tracking-widest font-semibold text-gradient my-gradient border border-yellow-400 rounded-lg md:text-xl cursor-pointer animate-pulse",
 }
 
 export default function Navbar({ url, text, transparent }: Props): JSX.Element {

@@ -12,7 +12,7 @@ export default function ActiveLink({ href, children }) {
 
   let className = children.props.className || ""
   if (router.pathname === href) {
-    className = `${className} my-gradient`
+    className = `${className} my-gradient transform -skew-y-6`
   }
 
   return <Link href={href}>{React.cloneElement(children, { className })}</Link>

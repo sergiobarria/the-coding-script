@@ -7,7 +7,7 @@ interface Props {
 
 export default function Title({ color, title }: Props): JSX.Element {
   return (
-    <div className="text-center capitalize">
+    <div className="mb-10 text-center capitalize">
       <h2
         className={`max-w-xs w-1/2 mx-auto text-4xl font-semibold transform my-gradient -skew-y-2 text-${
           color ? color : ""

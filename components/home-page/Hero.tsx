@@ -6,6 +6,7 @@ import stackLinks from "../../data/stackLinks"
 export default function Hero(): JSX.Element {
   return (
     <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-t from-gray-900 to-gray-700">
+      {/* <Image src="/images/whitegrit.png" layout="fill" objectFit="cover" /> */}
       <div className="container flex max-w-screen-xl p-6 mx-auto text-left text-white md:flex md:px-10 xl:px-0 ">
         <article className="">
           <h1 className="max-w-xl pb-6 mt-4 transform my-gradient -skew-y-2">
@@ -33,10 +34,14 @@ export default function Hero(): JSX.Element {
           />
         </div>
       </div>
-      <div className="w-full max-w-screen-xl p-6 md:px-10 xl:px-0">
-        <Button text="Contact Me" url="/contact" />
+
+      <div className="flex items-center justify-start w-full max-w-screen-xl px-10 xl:px-0">
+        <span className="mr-10">
+          <Button text="Contact Me" url="/contact" />
+        </span>
         <Button text="Check Blog" url="/blog" transparent />
       </div>
+
       <div className="absolute left-0 flex justify-center w-full bottom-4">
         {stackLinks.map((link) => (
           <div key={link.id} className="inline mr-4 md:mr-8">

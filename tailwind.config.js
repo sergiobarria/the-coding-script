@@ -24,8 +24,41 @@ module.exports = {
       orange: colors.orange,
     },
     extend: {
+      typography: {
+        xl: {
+          css: {
+            p: {
+              fontSize: "1.25rem",
+              marginTop: "0",
+              marginBottom: "0",
+            },
+            blockquote: {
+              fontSize: "1.5rem",
+            },
+          },
+        },
+        DEFAULT: {
+          css: {
+            p: {
+              marginTop: "0",
+              marginBottom: "0",
+            },
+            h1: {
+              marginBottom: "1rem",
+            },
+            blockquote: {
+              fontFamily: "Caveat",
+              fontSize: "1.25rem",
+              borderLeftColor: "#FBBF24",
+            },
+          },
+        },
+      },
       fontFamily: {
         sans: ["Titillium Web", ...defaultTheme.fontFamily.sans],
+      },
+      minHeight: {
+        "screen-center": "calc(100vh - 5rem - 9rem)",
       },
       height: {
         "h-1-px": "1px",
