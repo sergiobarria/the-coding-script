@@ -52,5 +52,18 @@ export const postBySlugQuery = `
 `
 
 export const getAllProjects = `
-  *[_type == "projects"] | order(date desc, _createdAt desc)
+  *[_type == "projects"] | order(date desc, _createdAt desc) {
+    title,
+    mainImage {
+      asset -> {
+        _id,
+        url
+      }
+    },
+    date,
+    description,
+    projectType, 
+    link,
+    tags,
+  }
 `

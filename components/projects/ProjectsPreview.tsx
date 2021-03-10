@@ -1,13 +1,17 @@
 import React from "react"
 
-// interface Props {
-//   projects: {}[]
-// }
+import Project from "./Project"
 
-export default function ProjectsPreview({ projects }) {
+interface Props {
+  projects: {}[]
+}
+
+export default function ProjectsPreview({ projects }: Props) {
   return (
-    <div>
-      <h1>This is the ProjectsPreview Container</h1>
+    <div className="grid w-11/12 max-w-screen-xl grid-cols-12 gap-8 mx-auto">
+      {projects.map((project, index) => (
+        <Project key={index} {...project} />
+      ))}
     </div>
   )
 }
