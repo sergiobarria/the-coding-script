@@ -23,7 +23,10 @@ export default function SocialLinks() {
         return (
           <li key={link.id}>
             <Link href={link.url}>
-              <a className="text-3xl duration-300 ease-linear cursor-pointer hover:text-yellow-500 trasition">
+              <a
+                className="text-3xl duration-300 ease-linear cursor-pointer hover:text-yellow-500 trasition"
+                target="_blank"
+              >
                 {icon}
               </a>
             </Link>

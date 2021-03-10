@@ -36,7 +36,7 @@ export default function Hero(): JSX.Element {
       </div>
 
       <div className="flex items-center justify-start w-full max-w-screen-xl px-10 xl:px-0">
-        <span className="mr-10">
+        <span className="mr-10 transition-all duration-300 ease-in-out transform hover:scale-110 hover:shadow-lg">
           <Button text="Contact Me" url="/contact" />
         </span>
         <Button text="Check Blog &rarr;" url="/blog" transparent />

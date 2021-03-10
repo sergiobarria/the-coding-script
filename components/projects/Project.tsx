@@ -14,7 +14,6 @@ interface Props {
 
 export default function Project(props: Props) {
   const { title, description, link, mainImage, date, projectType, tags } = props
-  console.log(mainImage)
 
   const formatedDate = new Date(date).toLocaleDateString("en-US", {
     day: "numeric",
