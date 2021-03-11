@@ -1,6 +1,9 @@
 import React from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
+
+import ActiveLink from "@/components/UI/ActiveLink"
 
 interface Props {
   title?: string
@@ -28,7 +31,6 @@ export default function Post(props: Props) {
     readTime,
   } = props
   const { latestPost } = props
-  // console.log(props)
 
   const formatedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
@@ -37,7 +39,7 @@ export default function Post(props: Props) {
   })
 
   return (
-    <Link href={`/blog/${slug.current}`}>
+    <ActiveLink href={`/blog/${slug.current}`}>
       <a>
         <article className="relative h-full p-4 mx-auto overflow-hidden transition-all duration-300 transform shadow-md hover:scale-110 hover:shadow-xl">
           <div className="relative h-48">
@@ -70,6 +72,6 @@ export default function Post(props: Props) {
           </div>
         </article>
       </a>
-    </Link>
+    </ActiveLink>
   )
 }
