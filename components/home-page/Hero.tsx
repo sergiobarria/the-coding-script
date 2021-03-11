@@ -7,7 +7,7 @@ export default function Hero(): JSX.Element {
   return (
     <section className="flex flex-col items-center justify-center h-screen bg-gradient-to-t from-gray-900 to-gray-700">
       {/* <Image src="/images/whitegrit.png" layout="fill" objectFit="cover" /> */}
-      <div className="container flex max-w-screen-xl p-6 mx-auto text-left text-white md:flex md:px-10 xl:px-0 ">
+      <div className="container flex max-w-screen-xl px-6 mx-auto text-left text-white md:flex md:px-10 xl:px-0 ">
         <article className="">
           <h1 className="max-w-xl pb-6 mt-4 transform my-gradient -skew-y-2">
             Hey, I'm Sergio
@@ -18,7 +18,7 @@ export default function Hero(): JSX.Element {
           <p className="pb-6 tracking-widest">
             I share tips and tricks about web and mobile development.
           </p>
-          <p className="pb-6 tracking-widest">
+          <p className="tracking-widest">
             Whether you're starting to learn or are more advanced yor're welcome
             to share together our developer journey.
           </p>
