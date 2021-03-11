@@ -1,5 +1,6 @@
 import React from "react"
 
+import SEO from "@/components/seo/SEO"
 import Hero from "@/components/home-page/Hero"
 import Services from "@/components/home-page/Services"
 import PostsPreview from "@/components/posts/PostsPreview"
@@ -12,6 +13,7 @@ export default function Home({ posts }) {
 
   return (
     <>
+      <SEO title="Home" />
       <Hero />
       <Services />
       <PostsPreview posts={posts} showBtn showTitle />

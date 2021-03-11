@@ -1,5 +1,6 @@
 import React from "react"
 
+import SEO from "@/components/seo/SEO"
 import Title from "@/components/UI/Title"
 import PostsFilter from "@/components/blog-page/PostsFilter"
 import PostsPreview from "@/components/posts/PostsPreview"
@@ -14,6 +15,7 @@ interface Props {
 export default function Blog({ posts }: Props) {
   return (
     <>
+      <SEO title="Blog" />
       <section className="py-10 my-20 min-h-screen-center">
         <Title title="Blog Posts" />
         {/* <PostsFilter /> */}

@@ -3,6 +3,7 @@ import Link from "next/link"
 import { useRouter } from "next/router"
 import BlockContent from "@sanity/block-content-to-react"
 
+import SEO from "@/components/seo/SEO"
 import Button from "@/components/UI/Button"
 
 import sanityClient from "../../../lib/sanity/config"
@@ -32,6 +33,7 @@ export default function PostPage({ data }) {
 
   return (
     <>
+      <SEO title="Blog" />
       <section className="container max-w-screen-md py-10 mx-auto my-20 min-h-screen-center">
         <article className="p-4 prose lg:prose-xl">
           <h1>{title}</h1>

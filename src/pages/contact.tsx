@@ -1,12 +1,12 @@
 import React from "react"
 
-// import SEO from "@/components/SEO"
+import SEO from "@/components/seo/SEO"
 import Form from "@/components/UI/Form"
 
 const index = () => {
   return (
     <>
-      {/* <SEO title="Contact" /> */}
+      <SEO title="Contact" />
       <Form />
     </>
   )

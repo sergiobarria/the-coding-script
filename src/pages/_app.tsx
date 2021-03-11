@@ -1,23 +1,19 @@
-import React, { useEffect } from "react"
-import AOS from "aos"
+import React from "react"
+import { DefaultSeo } from "next-seo"
+import SEO from "../../next-seo.config"
 
 import { AppProps } from "next/app"
 import Layout from "@/components/layout/Layout"
 import "../styles/tailwind.scss"
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
-  useEffect(() => {
-    AOS.init({
-      easing: "ease-out-cubic",
-      once: true,
-      offset: 50,
-    })
-  }, [])
-
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <DefaultSeo {...SEO} />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   )
 }
 
