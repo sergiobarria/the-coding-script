@@ -19,6 +19,7 @@ const postFields = `
   excerpt,
   summary,
   body,
+  tags,
   readTime
 `
 

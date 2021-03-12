@@ -31,9 +31,10 @@ export default function PostPage({ data }) {
     excerpt,
     summary,
     body,
+    tags,
     readTime,
   } = data.allPosts
-  // console.log(body)
+  console.log(tags)
 
   const formatedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
@@ -47,16 +48,29 @@ export default function PostPage({ data }) {
       <section className="container max-w-screen-md py-10 mx-auto my-20 min-h-screen-center">
         <article className="p-4 prose lg:prose-xl">
           <h1>{title}</h1>
+          {/* <div className="grid grid-cols-12 gap-2 mt-0">
+            {tags &&
+              tags.map((tag, index) => (
+                <div
+                  key={index}
+                  className="col-span-3 font-semibold text-center text-white bg-gray-400 rounded-full"
+                >
+                  <p className="m-0 prose-sm text-white">#{tag}</p>
+                </div>
+              ))}
+          </div> */}
           <div className="flex items-center">
-            <p className="pl-4 border-l-2 border-yellow-500">
+            <p className="py-0 pl-4 my-0 border-l-2 border-yellow-500">
               {categories.title}
             </p>
-            <span className="px-2 text-2xl text-yellow-500">&sdot;</span>
+            <span className="px-2 py-0 my-0 text-2xl text-yellow-500">
+              &sdot;
+            </span>
             <p>{readTime} min read</p>
           </div>
 
           <div className="flex justify-between my-2">
-            <div className="flex">
+            <div className="flex items-center">
               <span>
                 <Image
                   className="rounded-full "
@@ -122,6 +136,8 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, preview = false }) {
   const allPosts = await sanityClient.fetch(postQuery, { slug: params.slug })
+
+  console.log(allPosts)
 
   return {
     props: {
