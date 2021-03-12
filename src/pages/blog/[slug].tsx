@@ -34,7 +34,7 @@ export default function PostPage({ data }) {
     tags,
     readTime,
   } = data.allPosts
-  console.log(tags)
+  // console.log(tags)
 
   const formatedDate = new Date(publishedAt).toLocaleDateString("en-US", {
     day: "numeric",
@@ -137,7 +137,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, preview = false }) {
   const allPosts = await sanityClient.fetch(postQuery, { slug: params.slug })
 
-  console.log(allPosts)
+  // console.log(allPosts)
 
   return {
     props: {
