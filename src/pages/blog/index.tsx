@@ -32,6 +32,6 @@ export async function getStaticProps() {
     props: {
       posts: allPosts,
     },
-    // revalite: 600,
+    revalite: 600,
   }
 }
