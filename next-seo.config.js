@@ -1,7 +1,7 @@
 export default {
   title: "The Coding Script",
   description:
-    "Web & Mobile development blog portfolio created with Next.js, Sanity io, TypeScript and Tailwind CSS",
+    "Web & Mobile development blog portfolio created with Next.js, Sanity io and TypeScript",
   openGraph: {
     type: "website",
     locale: "en_IE",
