@@ -28,6 +28,6 @@ export async function getStaticProps() {
     props: {
       about: aboutContent,
     },
-    revalidate: 60,
+    revalidate: 45,
   }
 }
