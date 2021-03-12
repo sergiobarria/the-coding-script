@@ -11,6 +11,16 @@ import { postSlugsQuery, postQuery } from "../../../lib/sanity/queries"
 import { serializers } from "../../../lib/sanity/serializers"
 
 export default function PostPage({ data }) {
+  const router = useRouter()
+
+  if (router.isFallback) {
+    return (
+      <section className="flex flex-col items-center justify-center mt-20 min-h-screen-center">
+        <h1>Loading...</h1>
+      </section>
+    )
+  }
+
   const {
     title,
     slug,
@@ -101,7 +111,7 @@ export async function getStaticPaths() {
     paths: paths.map((slug) => ({
       params: { slug },
     })),
-    fallback: false,
+    fallback: true,
   }
 }
 
@@ -114,5 +124,6 @@ export async function getStaticProps({ params, preview = false }) {
         allPosts,
       },
     },
+    revalidate: 60,
   }
 }
