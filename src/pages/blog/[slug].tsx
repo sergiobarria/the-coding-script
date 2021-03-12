@@ -91,7 +91,12 @@ export default function PostPage({ data }) {
           )}
 
           <div className="py-6">
-            <BlockContent blocks={body} serializers={serializers} />
+            <BlockContent
+              blocks={body}
+              projectId="ss0ub4d0"
+              dataset="production"
+              serializers={serializers}
+            />
           </div>
           <hr />
         </article>
