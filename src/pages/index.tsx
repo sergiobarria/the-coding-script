@@ -21,13 +21,13 @@ export default function Home({ posts }) {
   )
 }
 
-// export async function getStaticProps() {
-//   const allPosts = await sanityClient.fetch(getAllPosts)
+export async function getStaticProps() {
+  const allPosts = await sanityClient.fetch(getAllPosts)
 
-//   return {
-//     props: {
-//       posts: allPosts,
-//     },
-//     revalidate: 1,
-//   }
-// }
+  return {
+    props: {
+      posts: allPosts,
+    },
+    revalidate: 1,
+  }
+}
