@@ -18,8 +18,8 @@ export default function Sidebar({ isOpen, setIsOpen, toggleSidebar }) {
 
   return (
     <aside
-      className={`fixed top-0 left-0 z-50 w-full h-screen bg-gradient-to-t from-gray-900 to-gray-700 transform scale-0 transition-all duration-500 ease-in-out ${
-        isOpen ? "transform scale-100" : ""
+      className={`fixed top-0 left-0 z-50 w-full h-screen bg-gradient-to-t from-gray-900 to-gray-700 transform scale-0 transition-all duration-500 ease-in-out opacity-0  ${
+        isOpen ? "transform scale-100 opacity-100" : ""
       }`}
     >
       <button
